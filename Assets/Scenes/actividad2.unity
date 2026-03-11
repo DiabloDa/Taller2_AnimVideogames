@@ -942,8 +942,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330102414}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.17339006, y: -0.7217565, z: 0.15652172, w: 0.6515401}
+  m_LocalPosition: {x: -4.32426, y: -0.24990383, z: 3.6425412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -952,7 +952,7 @@ Transform:
   - {fileID: 1794477407}
   - {fileID: 2146746419}
   m_Father: {fileID: 2034425448}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 26.865, y: -96.565, z: -2.977}
 --- !u!4 &361038894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1852576806548013000, guid: 3414b493819c8cd498a1c0d2f993f555, type: 3}
@@ -1408,9 +1408,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.RigBuilder
   m_RigLayers:
   - m_Rig: {fileID: 810005428}
-    m_Active: 0
+    m_Active: 1
   - m_Rig: {fileID: 1762126694}
-    m_Active: 0
+    m_Active: 1
   m_Effectors: []
 --- !u!114 &650984394
 MonoBehaviour:
@@ -1761,12 +1761,12 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: 0, y: 0, z: 0}
+    m_Offset: {x: 3.61, y: -0.2, z: 0.2}
     m_ConstrainedAxes:
       x: 1
       y: 1
       z: 1
-    m_MaintainOffset: 0
+    m_MaintainOffset: 1
 --- !u!1 &852521825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74d3c71565b36994ba5fbb42543dffae, type: 3}
