@@ -27,14 +27,14 @@ namespace Clases.Clase_2.Scripts
             
             aimCamera?.gameObject.SetActive(ctx.started);
             ParentCharacter.IsAiming = ctx.started;
-            aimConstraint.enabled = ctx.started;
+            //aimConstraint.enabled = ctx.started;
             aimDampener.TargetValue = ctx.started ? 1 : 0;
         }
 
         private void Update()
         {
             aimDampener.Update();
-            aimConstraint.weight = aimDampener.CurrentValue;
+           // aimConstraint.weight = aimDampener.CurrentValue;
             animator.SetLayerWeight(1,aimDampener.CurrentValue);
         }
     }
