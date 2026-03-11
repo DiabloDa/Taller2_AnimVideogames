@@ -1,5 +1,4 @@
 using Clases.Clase_2.Scripts;
-using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,7 +21,7 @@ namespace Clases.Clase_2.Scripts
         [SerializeField] private LayerMask hitMask;
 
         [Header("RecoilCamera")]
-        private float camShake = 0.6f;
+        [SerializeField] private float camShake = 0.6f;
         [SerializeField] private float camKick = 0.12f;
         [SerializeField] private float camRecover = 0.18f;
 
@@ -66,7 +65,11 @@ namespace Clases.Clase_2.Scripts
         {
             if(requiereAim && (ParentCharacter == null || ! ParentCharacter.IsAiming)) return;
             if(Time.time < _nextShootTime) return;
-            _nextShootTime = Time.time;
+
+            ShootOnce();
+
+            float interval = fireRate > 0f ? (1f / fireRate) : 0f;
+            _nextShootTime = Time.time + interval;
 
         }
 

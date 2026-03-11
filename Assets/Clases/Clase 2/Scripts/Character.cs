@@ -10,6 +10,8 @@ namespace Clases.Clase_2.Scripts
         private bool isFiring;
         private bool isReloading;
         private bool isStealth;
+        [SerializeField] private float defaultMoveInputMultiplier = 1f;
+
         private float moveInputMultiplier = 1f;
         private Transform lockTarget;
 
@@ -57,6 +59,7 @@ namespace Clases.Clase_2.Scripts
 
         private void Awake()
         {
+            MoveInputMultiplier = defaultMoveInputMultiplier;
             RegisterComponents();
             Cursor.lockState = CursorLockMode.Locked;
         }

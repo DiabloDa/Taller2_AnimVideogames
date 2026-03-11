@@ -16,6 +16,9 @@ namespace Clases.Clase_2.Scripts
         [SerializeField] private FloatDampener speedY;
         [SerializeField] private Camera camera;
         [SerializeField] private float angularSpeed;
+
+        [Header("Tuning")]
+        [SerializeField] private float movementInputScale = 1f;
         private Quaternion targetRotation;
         
         private int _speedXHash;
@@ -54,8 +57,12 @@ namespace Clases.Clase_2.Scripts
         {
             speedX.Update();
             speedY.Update();
-            _animator.SetFloat(_speedXHash,speedX.CurrentValue);
-            _animator.SetFloat(_speedYHash,speedY.CurrentValue);
+
+            float characterMultiplier = ParentCharacter != null ? ParentCharacter.MoveInputMultiplier : 1f;
+            float appliedScale = movementInputScale * characterMultiplier;
+
+            _animator.SetFloat(_speedXHash, speedX.CurrentValue * appliedScale);
+            _animator.SetFloat(_speedYHash, speedY.CurrentValue * appliedScale);
             SolveCharacterRotation();
             if (!ParentCharacter.IsAiming)
                 ApplyCharacterRotation();
