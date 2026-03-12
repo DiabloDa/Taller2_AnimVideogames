@@ -75,23 +75,51 @@ namespace Clases.Clase_2.Scripts
 
         private void ShootOnce()
         {
-            if (animator) animator.SetTrigger("fire");
-            if(recoil) recoil.Kick(camShake, camKick, camRecover);
+            if(animator) animator.SetTrigger("Fire");
+            if(recoil) recoil.Kick(camShake,camKick,camRecover);
 
             Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-            Vector3 from = tracerOrigin? tracerOrigin.position : ray.origin;
+            Vector3 from = tracerOrigin ? tracerOrigin.position : ray.origin;
 
-            if(Physics.Raycast(ray, out var hit, range, hitMask, QueryTriggerInteraction.Ignore))
+            if (Physics.Raycast(ray, out var hit, range, hitMask, QueryTriggerInteraction.Ignore))
             {
                 Vector3 to = hit.point;
 
-                Debug.DrawRay(ray.origin, ray.direction * Vector3.Distance(ray.direction, to), Color.magenta, debugDuration);
-                Debug.DrawLine(from, to, Color.yellow, debugDuration);
+                Debug.DrawRay(ray.origin, ray.direction * Vector3.Distance(ray.origin, to), Color.magenta,debugDuration);
+                Debug.DrawLine(from,to, Color.yellow,debugDuration);
                 Debug.DrawRay(to, hit.normal, Color.red, debugDuration);
+
+                var info = new HitInfo
+                {
+                    point = hit.point,
+                    normal = hit.normal,
+                    damage = 10f
+                };
+
+                if (hit.collider.TryGetComponent<IHittable>(out var h))
+                {
+                    h.ApplyHit(info);
+                }
+                else
+                {
+                    var rb = hit.collider.attachedRigidbody;
+                    if (rb && rb.TryGetComponent<IHittable>(out var hRb))
+                    {
+                        hRb.ApplyHit(info);
+                    }
+                    else
+                    {
+                        var hParent = hit.collider.GetComponentInParent<IHittable>();
+                        if(hParent != null) hParent.ApplyHit(info);
+                    }
+                }
             }
-
-
-
+            else
+            {
+                Vector3 to = ray.origin + ray.direction * range;
+                Debug.DrawRay(ray.origin,ray.direction * range,Color.gray,debugDuration);
+                Debug.DrawLine(from,to,Color.cyan,debugDuration);
+            }
         }
 
     }
