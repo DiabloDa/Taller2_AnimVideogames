@@ -10,6 +10,8 @@ namespace Clases.Clase_2.Scripts
         private bool isFiring;
         private bool isReloading;
         private bool isStealth;
+        private bool isWeaponHolstered;
+        private bool isWeaponTransitioning;
         [SerializeField] private float defaultMoveInputMultiplier = 1f;
 
         private float moveInputMultiplier = 1f;
@@ -37,6 +39,25 @@ namespace Clases.Clase_2.Scripts
         {
             get => isStealth;
             set => isStealth = value;
+        }
+
+        /// <summary>
+        /// True when the weapon is stored/hidden. While true, the player cannot shoot, aim or reload.
+        /// </summary>
+        public bool IsWeaponHolstered
+        {
+            get => isWeaponHolstered;
+            set => isWeaponHolstered = value;
+        }
+
+        /// <summary>
+        /// True while playing equip/holster transition animation.
+        /// Treated the same as holstered for gameplay blocking.
+        /// </summary>
+        public bool IsWeaponTransitioning
+        {
+            get => isWeaponTransitioning;
+            set => isWeaponTransitioning = value;
         }
 
         /// <summary>

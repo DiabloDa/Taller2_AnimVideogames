@@ -12,6 +12,9 @@ public class IKFromParams : MonoBehaviour
 
     public bool readFromAnimator = true;
 
+    [Header("Rules")]
+    public bool disableIKWhileReloading = true;
+
     public string plook = "Look_IK";
     private string pRHPos = "RH_IK";
     private string pRHRot = "RH_IKRot";
@@ -35,6 +38,19 @@ public class IKFromParams : MonoBehaviour
     private void OnAnimatorIK(int layerIndex)
     {
         if (!animator) return;
+
+        if (disableIKWhileReloading)
+        {
+            var character = GetComponentInParent<Clases.Clase_2.Scripts.Character>();
+            if (character != null && character.IsReloading)
+            {
+                animator.SetLookAtWeight(0);
+                animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
+                animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
+                animator.SetIKHintPositionWeight(AvatarIKHint.RightElbow, 0);
+                return;
+            }
+        }
 
         float wLook = readFromAnimator ? animator.GetFloat(plook):Look;
         float wRHPos = readFromAnimator? animator.GetFloat(pRHPos): RHPos;

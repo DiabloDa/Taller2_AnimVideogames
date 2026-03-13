@@ -10,6 +10,9 @@ public class StateIKCurve : StateMachineBehaviour
     public override void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        var character = animator.GetComponentInParent<Clases.Clase_2.Scripts.Character>();
+        if (character != null && character.IsReloading) return;
+
         if (animator.IsInTransition(layerIndex)) return;
 
         var ik = animator.GetComponent<IKFromParams>();
