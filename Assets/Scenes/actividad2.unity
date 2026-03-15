@@ -1978,7 +1978,7 @@ Transform:
   m_GameObject: {fileID: 602500355}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20535795, y: -0.81342804, z: -0.088310055, w: -0.5369957}
-  m_LocalPosition: {x: 0.213, y: 1.46, z: 0.075}
+  m_LocalPosition: {x: -0.363, y: 1.156, z: 0.252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2076,7 +2076,7 @@ MonoBehaviour:
       m_Item7:
         transform: {fileID: 0}
         weight: 0
-    m_Offset: {x: -0.54, y: -0.2, z: 0.35}
+    m_Offset: {x: 0.33, y: 0.01, z: 0.23}
     m_ConstrainedAxes:
       x: 1
       y: 1
@@ -3178,7 +3178,7 @@ Transform:
   m_GameObject: {fileID: 748424160}
   serializedVersion: 2
   m_LocalRotation: {x: 0.20535795, y: -0.81342804, z: -0.088310055, w: -0.5369957}
-  m_LocalPosition: {x: 0.213, y: 1.46, z: 0.075}
+  m_LocalPosition: {x: -0.227, y: 0.829, z: 0.217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4733,14 +4733,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226375159}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.1159338, w: 0.9932569}
+  m_LocalPosition: {x: 0.067, y: 1.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1411702026}
   m_Father: {fileID: 1689609933}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.315}
 --- !u!4 &1241919717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8021001004253913084, guid: 3414b493819c8cd498a1c0d2f993f555, type: 3}
@@ -5492,13 +5492,13 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 64
-  camShake: 0.6
+  camShake: 2
   camKick: 0.12
-  camRecover: 0.18
+  camRecover: 1
   tracerOrigin: {fileID: 169449978}
   isFiring: 0
-  magazineSize: 30
-  ammoInMagazine: 30
+  magazineSize: 10
+  ammoInMagazine: 10
   ammoReserve: 90
   autoReloadWhenEmpty: 1
   pollKeyboardR: 1
@@ -6429,7 +6429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674817859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6679,9 +6679,9 @@ MonoBehaviour:
   hitMask:
     serializedVersion: 2
     m_Bits: 64
-  camShake: 0.6
-  camKick: 0.12
-  camRecover: 0.18
+  camShake: 5.32
+  camKick: 0.28
+  camRecover: 2.98
   tracerOrigin: {fileID: 169449978}
   isFiring: 0
   magazineSize: 30
@@ -7000,7 +7000,7 @@ Transform:
   m_GameObject: {fileID: 1705787032}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.1159338, w: 0.9932569}
-  m_LocalPosition: {x: 0.042, y: 1.428, z: 0}
+  m_LocalPosition: {x: 0.067, y: 1.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7458,7 +7458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Clases.Clase_2.Scripts.RecoilCameraKick
   _cameras:
   - {fileID: 7334485}
-  - {fileID: 0}
+  - {fileID: 193066657}
+  - {fileID: 391100561}
 --- !u!4 &1765686378
 Transform:
   m_ObjectHideFlags: 0
@@ -7490,7 +7491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1784280601
 Transform:
   m_ObjectHideFlags: 0
