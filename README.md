@@ -17,3 +17,5 @@ E: Modo sigilo
 T: saludo
 
 Tecla 2: Guardar/Sacar arma
+
+Link de los videos de los personajes: https://drive.google.com/drive/folders/1UDjloWAkpEXfexb7JLcP2Q0TFBY4906n?usp=sharing
